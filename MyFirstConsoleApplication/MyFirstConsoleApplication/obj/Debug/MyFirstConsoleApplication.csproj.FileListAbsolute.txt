@@ -1,0 +1,8 @@
+C:\Users\Julia\Desktop\C#\CSE325\MyFirstConsoleApplication\MyFirstConsoleApplication\bin\Debug\MyFirstConsoleApplication.exe.config
+C:\Users\Julia\Desktop\C#\CSE325\MyFirstConsoleApplication\MyFirstConsoleApplication\bin\Debug\MyFirstConsoleApplication.exe
+C:\Users\Julia\Desktop\C#\CSE325\MyFirstConsoleApplication\MyFirstConsoleApplication\bin\Debug\MyFirstConsoleApplication.pdb
+C:\Users\Julia\Desktop\C#\CSE325\MyFirstConsoleApplication\MyFirstConsoleApplication\obj\Debug\MyFirstConsoleApplication.csproj.AssemblyReference.cache
+C:\Users\Julia\Desktop\C#\CSE325\MyFirstConsoleApplication\MyFirstConsoleApplication\obj\Debug\MyFirstConsoleApplication.csproj.SuggestedBindingRedirects.cache
+C:\Users\Julia\Desktop\C#\CSE325\MyFirstConsoleApplication\MyFirstConsoleApplication\obj\Debug\MyFirstConsoleApplication.csproj.CoreCompileInputs.cache
+C:\Users\Julia\Desktop\C#\CSE325\MyFirstConsoleApplication\MyFirstConsoleApplication\obj\Debug\MyFirstConsoleApplication.exe
+C:\Users\Julia\Desktop\C#\CSE325\MyFirstConsoleApplication\MyFirstConsoleApplication\obj\Debug\MyFirstConsoleApplication.pdb
