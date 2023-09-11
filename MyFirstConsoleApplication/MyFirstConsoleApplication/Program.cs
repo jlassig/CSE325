@@ -16,13 +16,17 @@ namespace MyFirstConsoleApplication
             // task 2:
             string name = "Julia";
             string location = "Utah";
+
             // task 3:
             WriteLine($"My name is {name}.");
             WriteLine($"I am from {location}.");
 
             // task 4:
             DateTime today = DateTime.Now;
-            WriteLine($"Today's date: {today.ToString("MM/dd/yyyy")}");
+
+            //WriteLine($"Today's date: {today.ToString("MM/dd/yyyy")}");
+            WriteLine($"Today's date: {today.ToString("d")}");
+
 
             // task 5:
             DateTime christmas = new DateTime(2023, 12, 25, 0, 0, 0);
@@ -47,9 +51,10 @@ namespace MyFirstConsoleApplication
             glassArea + " square metres");
 
 
-            WriteLine("\nPress any key to exit...");
+            WriteLine("\nPress any key to exit.");
             ReadKey();
 
+           
 
 
 
