@@ -4,6 +4,7 @@ using System.ComponentModel;
 using System.Data;
 using System.Drawing;
 using System.Linq;
+using System.Media;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
@@ -112,6 +113,7 @@ namespace MathQuiz
         {
             StartTheQuiz();
             startButton.Enabled = false;
+            timeLabel.BackColor = Color.LightGray;
 
         }
 
@@ -182,6 +184,12 @@ namespace MathQuiz
                 int lengthOfAnswer = answerBox.Value.ToString().Length;
                 answerBox.Select(0, lengthOfAnswer);
             }
+        }
+
+        private void ValueChanged(object sender, EventArgs e)
+        {
+            SoundPlayer simpleSound = new SoundPlayer(@"c:\Windows\Media\tada.wav");
+            simpleSound.Play();
         }
     }
 }
