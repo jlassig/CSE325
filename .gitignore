@@ -1,0 +1,6 @@
+﻿################################################################################
+# This .gitignore file was automatically created by Microsoft(R) Visual Studio.
+################################################################################
+
+/razorcore/RazorPagesMovie/bin/Debug/net5.0
+/razorcore/RazorPagesMovie/obj

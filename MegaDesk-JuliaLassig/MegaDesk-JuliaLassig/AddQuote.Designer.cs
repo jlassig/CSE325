@@ -252,7 +252,7 @@
             this.depthError.ForeColor = System.Drawing.Color.IndianRed;
             this.depthError.Location = new System.Drawing.Point(300, 191);
             this.depthError.Name = "depthError";
-            this.depthError.Size = new System.Drawing.Size(56, 13);
+            this.depthError.Size = new System.Drawing.Size(85, 20);
             this.depthError.TabIndex = 18;
             this.depthError.Text = "depthError";
             // 
@@ -262,7 +262,7 @@
             this.widthError.ForeColor = System.Drawing.Color.IndianRed;
             this.widthError.Location = new System.Drawing.Point(302, 131);
             this.widthError.Name = "widthError";
-            this.widthError.Size = new System.Drawing.Size(54, 13);
+            this.widthError.Size = new System.Drawing.Size(81, 20);
             this.widthError.TabIndex = 17;
             this.widthError.Text = "widthError";
             this.widthError.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
@@ -292,7 +292,7 @@
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
             this.pictureBox1.Location = new System.Drawing.Point(49, 12);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(588, 107);
+            this.pictureBox1.Size = new System.Drawing.Size(490, 107);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 18;
             this.pictureBox1.TabStop = false;
