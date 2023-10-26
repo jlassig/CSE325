@@ -1,0 +1,61 @@
+﻿@page
+@model ScriptureJournal.Pages.Entries.IndexModel
+
+@{
+    ViewData["Title"] = "Index";
+}
+
+<h1>Index</h1>
+
+<p>
+    <a asp-page="Create">Create New</a>
+</p>
+
+<form>
+    <p>
+        Search By Book:  <input type="text" asp-for="SearchBookString" />
+        <input type="submit" value="Filter" />
+    </p>
+
+    <p>
+        Search By Entry: <input type="text" asp-for="SearchEntryString" />
+        <input type="submit" value="Filter" />
+    </p>
+</form>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].Reference)
+            </th>
+            <th class="entry-column">
+                @Html.DisplayNameFor(model => model.Entry[0].EntryText)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Entry[0].Date)
+            </th>
+            <th></th>
+        </tr>
+    </thead>
+    <tbody>
+@foreach (var item in Model.Entry) {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Reference)
+            </td>
+            <td class="entry-column">
+                @Html.DisplayFor(modelItem => item.EntryText)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
+            <td>
+                <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
+                <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
+                <a asp-page="./Delete" asp-route-id="@item.Id">Delete</a>
+            </td>
+        </tr>
+}
+    </tbody>
+</table>

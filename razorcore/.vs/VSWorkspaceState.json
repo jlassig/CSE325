@@ -4,9 +4,11 @@
     "\\RazorPagesMovie",
     "\\RazorPagesMovie\\Models",
     "\\RazorPagesMovie\\Pages",
-    "\\RazorPagesMovie\\Pages\\Shared",
+    "\\RazorPagesMovie\\Pages\\Movies",
+    "\\RazorPagesMovie\\Properties",
+    "\\RazorPagesMovie\\wwwroot",
     "\\RazorPagesMovie\\wwwroot\\css"
   ],
-  "SelectedNode": "\\RazorPagesMovie\\Pages\\Shared\\_Layout.cshtml",
+  "SelectedNode": "\\RazorPagesMovie\\Models\\Movie.cs",
   "PreviewInSolutionExplorer": false
 }

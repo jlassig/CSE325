@@ -16,6 +16,26 @@ build_property.GenerateRazorMetadataSourceChecksumAttributes =
 build_property.MSBuildProjectDirectory = C:\Users\Julia\Desktop\C#\CSE325\ScriptureJournal\ScriptureJournal
 build_property._RazorSourceGeneratorDebug = 
 
+[C:/Users/Julia/Desktop/C\#/CSE325/ScriptureJournal/ScriptureJournal/Pages/Entries/Create.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xDcmVhdGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Julia/Desktop/C\#/CSE325/ScriptureJournal/ScriptureJournal/Pages/Entries/Delete.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xEZWxldGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Julia/Desktop/C\#/CSE325/ScriptureJournal/ScriptureJournal/Pages/Entries/Details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xEZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Julia/Desktop/C\#/CSE325/ScriptureJournal/ScriptureJournal/Pages/Entries/Edit.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xFZGl0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/Users/Julia/Desktop/C\#/CSE325/ScriptureJournal/ScriptureJournal/Pages/Entries/Index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRW50cmllc1xJbmRleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
 [C:/Users/Julia/Desktop/C\#/CSE325/ScriptureJournal/ScriptureJournal/Pages/Error.cshtml]
 build_metadata.AdditionalFiles.TargetPath = UGFnZXNcRXJyb3IuY3NodG1s
 build_metadata.AdditionalFiles.CssScope = 
