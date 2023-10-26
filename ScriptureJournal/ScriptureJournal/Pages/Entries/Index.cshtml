@@ -5,35 +5,43 @@
     ViewData["Title"] = "Index";
 }
 
-<h1>Index</h1>
 
-<p>
-    <a asp-page="Create">Create New</a>
+<div class="wrapper">
+<h1>Entries</h1>
+
+<p class="add-button-p">
+    <a asp-page="Create" class="add-button">Add Entry</a>
 </p>
 
-<form>
-    <p>
-        Search By Book:  <input type="text" asp-for="SearchBookString" />
-        <input type="submit" value="Filter" />
-    </p>
+<form class="filter-form">
+        <div class="form-group">
+            <label for="SearchBookString">Search By Book:</label>
+            <input type="text" asp-for="SearchBookString" id="SearchBookString" />
+            <input type="submit" value="Filter" />
+        </div>
 
-    <p>
-        Search By Entry: <input type="text" asp-for="SearchEntryString" />
-        <input type="submit" value="Filter" />
-    </p>
+        <div class="form-group">
+            <label for="SearchEntryString">Search By Entry:</label>
+            <input type="text" asp-for="SearchEntryString" id="SearchEntryString" />
+            <input type="submit" value="Filter" />
+        </div>
 </form>
 
-<table class="table">
+<table class="entry-table">
     <thead>
         <tr>
+            <th class="date-column">
+                <a asp-page="./Index" asp-route-sortBy="descDate">Date</a>
+            </th>
             <th>
-                @Html.DisplayNameFor(model => model.Entry[0].Reference)
+                
+                <a asp-page="./Index" asp-route-sortBy="ascRef">Reference</a>
             </th>
             <th class="entry-column">
                 @Html.DisplayNameFor(model => model.Entry[0].EntryText)
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.Entry[0].Date)
+                Options
             </th>
             <th></th>
         </tr>
@@ -41,15 +49,16 @@
     <tbody>
 @foreach (var item in Model.Entry) {
         <tr>
+            <td class="date-column">
+                @Html.DisplayFor(modelItem => item.Date)
+            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Reference)
             </td>
             <td class="entry-column">
                 @Html.DisplayFor(modelItem => item.EntryText)
             </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Date)
-            </td>
+
             <td>
                 <a asp-page="./Edit" asp-route-id="@item.Id">Edit</a> |
                 <a asp-page="./Details" asp-route-id="@item.Id">Details</a> |
@@ -59,3 +68,4 @@
 }
     </tbody>
 </table>
+</div>

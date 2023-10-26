@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Globalization;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Mvc;
@@ -30,7 +31,7 @@ namespace ScriptureJournal.Pages.Entries
         public string? SearchEntryString { get; set; }
 
 
-        public async Task OnGetAsync()
+        public async Task OnGetAsync(string sortBy)
         {
             var entries = from e in _context.Entry
                           select e;
@@ -42,6 +43,18 @@ namespace ScriptureJournal.Pages.Entries
             if (!string.IsNullOrEmpty(SearchEntryString))
             {
                 entries = entries.Where(e => e.EntryText != null && e.EntryText.Contains(SearchEntryString));
+            }
+            if (sortBy == "descDate")
+            {
+                entries = entries.OrderByDescending(e => e.Date);
+            }
+            else if (sortBy == "ascRef")
+            {
+                entries = entries.OrderBy(e => e.Reference);
+            }
+            else
+            {
+                entries = entries.OrderBy(e => e.Date);
             }
 
             Entry = await entries.ToListAsync();

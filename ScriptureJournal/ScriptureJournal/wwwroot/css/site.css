@@ -1,11 +1,25 @@
-*{
-    border: 2px solid pink;
+
+:root {
+    /*FONTS:*/
+    --heading-font: 'EB Garamond', serif;
+    --paragraph-font: 'Sometype Mono', monospace, san-serif;
+    /*COLORS:*/
+    --primary-color: azure;
+    --secondary-color: light-green;
 }
 
-html {
-  font-size: 14px;
+    html {
+    font-size: 14px;
+}
+   
+
+body{
+    font-family: var(--paragraph-font);
 }
 
+h1, h2, h3, h4,h5 {
+    font-family: var(--heading-font);
+}
 
 
 .btn:focus, .btn:active:focus, .btn-link.nav-link:focus, .form-control:focus, .form-check-input:focus {
@@ -18,26 +32,77 @@ html {
 }
 
 body {
-  margin-bottom: 60px;
+    margin-bottom: 60px;
+    background-image: url('../../images/grove.png');
+    background-size: cover;
 }
 
-form {
+
+.filter-form {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
+    background-color:azure;
+    padding: 3em;
+    
+}
+.entry-table{
+    background-color: azure;
+}
+
+.entry-table td{
+    padding: 1em;
+
+}
+.entry-table tr{
+    border-bottom: 2px solid black;
+}
+.entry-table th{
+    font-size: 1.3em;
+}
+
+a{
+    text-decoration: none;
+    color: black;
+    font-weight: bold;
+    padding: .5em;
+    border-radius: 5px;
+}
+a:hover{
+    background-color: lightgreen;
+    color: black;
     
 }
 
+.add-button {
+    background-color: azure;
+    border: 2px solid black;
+    border-radius: 5px;
+
+}
+.wrapper{
+    background-color: azure;
+    padding: 1.2em;
+}
+.back-link, .btn-primary{
+    margin: 1em 0 1em 0;
+}
+.add-button-p{
+    margin: 2em 0 2em 0;    
+}
+.date-column{
+    display:none;
+}
 
 
 @media (min-width: 768px) {
     html {
         font-size: 16px;
     }
-    form p {
+    .filter-form div {
         max-width: 40%;
     }
-    form {
+    .filter-form {
 
         flex-direction: row;
         justify-content: space-evenly;
@@ -45,4 +110,8 @@ form {
     .entry-column{
         width: 50%;
     }
+    .date-column{
+        display: table-cell;
+    }
+    
 }

@@ -13,6 +13,10 @@
       "PackagePath": "staticwebassets\\favicon.ico"
     },
     {
+      "Id": "C:\\Users\\Julia\\Desktop\\C#\\CSE325\\ScriptureJournal\\ScriptureJournal\\wwwroot\\images\\grove.png",
+      "PackagePath": "staticwebassets\\images\\grove.png"
+    },
+    {
       "Id": "C:\\Users\\Julia\\Desktop\\C#\\CSE325\\ScriptureJournal\\ScriptureJournal\\wwwroot\\js\\site.js",
       "PackagePath": "staticwebassets\\js\\site.js"
     },
