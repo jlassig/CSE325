@@ -23,10 +23,12 @@
     <thead>
         <tr>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].Date)
+                <a asp-page="./Index" asp-route-sortBy="descDate">Date</a>
+                
             </th>
             <th>
-                @Html.DisplayNameFor(model => model.DeskQuote[0].CustomerName)
+                <a asp-page="./Index" asp-route-sortBy="ascName">Name</a>
+                
             </th>
             <th>
                 @Html.DisplayNameFor(model => model.DeskQuote[0].NumDrawers)
