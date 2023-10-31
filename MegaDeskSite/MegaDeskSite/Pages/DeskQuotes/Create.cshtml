@@ -40,12 +40,23 @@
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.Material" class="control-label"></label>
-                <input asp-for="DeskQuote.Material" class="form-control" />
+                <select asp-for="DeskQuote.Material" class="form-control">
+                    <option value="oak">oak</option>
+                    <option value="veneer">veneer</option>
+                    <option value="laminate">laminate</option>
+                    <option value="rosewood">rosewood</option>
+                    <option value="pine">pine</option>
+                </select>
                 <span asp-validation-for="DeskQuote.Material" class="text-danger"></span>
             </div>
             <div class="form-group">
                 <label asp-for="DeskQuote.RushOrderChoice" class="control-label"></label>
-                <input asp-for="DeskQuote.RushOrderChoice" class="form-control" />
+                <select asp-for="DeskQuote.RushOrderChoice" class="form-control">
+                    <option value="3">3</option>
+                    <option value="5">5</option>
+                    <option value="7">7</option>
+                    <option value="14">14</option>
+                </select>
                 <span asp-validation-for="DeskQuote.RushOrderChoice" class="text-danger"></span>
             </div>
             <div class="form-group">
