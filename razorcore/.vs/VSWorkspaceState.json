@@ -9,6 +9,6 @@
     "\\RazorPagesMovie\\wwwroot",
     "\\RazorPagesMovie\\wwwroot\\css"
   ],
-  "SelectedNode": "\\RazorPagesMovie\\Models\\Movie.cs",
+  "SelectedNode": "\\RazorPagesMovie\\Startup.cs",
   "PreviewInSolutionExplorer": false
 }

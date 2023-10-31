@@ -5,7 +5,7 @@
     --paragraph-font: 'Sometype Mono', monospace, san-serif;
     /*COLORS:*/
     --primary-color: azure;
-    --secondary-color: light-green;
+    --secondary-color: lightgreen;
 }
 
     html {
@@ -42,12 +42,12 @@ body {
     display: flex;
     flex-wrap: wrap;
     flex-direction: column;
-    background-color:azure;
+    background-color:var(--primary-color);
     padding: 3em;
     
 }
 .entry-table{
-    background-color: azure;
+    background-color: var(--primary-color);
 }
 
 .entry-table td{
@@ -69,19 +69,19 @@ a{
     border-radius: 5px;
 }
 a:hover{
-    background-color: lightgreen;
+    background-color: var(--secondary-color);
     color: black;
     
 }
 
 .add-button {
-    background-color: azure;
+    background-color: var(--primary-color);
     border: 2px solid black;
     border-radius: 5px;
 
 }
 .wrapper{
-    background-color: azure;
+    background-color: var(--primary-color);
     padding: 1.2em;
 }
 .back-link, .btn-primary{
