@@ -5,3 +5,7 @@
 /razorcore/RazorPagesMovie/bin/Debug/net5.0
 /razorcore/RazorPagesMovie/obj
 /MegaDeskSite/MegaDeskSite/.vs/MegaDeskSite/FileContentIndex
+/MVC/MvcMovie/bin/Debug/net7.0
+/MVC/MvcMovie/Migrations
+/MVC/MvcMovie/obj
+/MVC/MvcMovie/wwwroot/lib
