@@ -1,5 +1,3 @@
-using LassigUniversity.Data;
-using Microsoft.EntityFrameworkCore;
 using Microsoft.AspNetCore.Builder;
 using Microsoft.AspNetCore.Hosting;
 using Microsoft.AspNetCore.HttpsPolicy;
@@ -10,6 +8,8 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Threading.Tasks;
+using LassigUniversity.Data;
+using Microsoft.EntityFrameworkCore;
 
 
 namespace LassigUniversity
@@ -28,7 +28,7 @@ namespace LassigUniversity
         {
             services.AddDbContext<SchoolContext>(options =>
                 options.UseSqlServer(Configuration.GetConnectionString("DefaultConnection")));
-
+            
             services.AddDatabaseDeveloperPageExceptionFilter();
 
             services.AddControllersWithViews();

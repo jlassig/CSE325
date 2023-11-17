@@ -1,4 +1,5 @@
 ﻿using System.ComponentModel.DataAnnotations;
+using System.ComponentModel.DataAnnotations.Schema;
 
 namespace LassigUniversity.Models
 {
@@ -12,7 +13,6 @@ namespace LassigUniversity.Models
         public int EnrollmentID { get; set; }
         public int CourseID { get; set; }
         public int StudentID { get; set; }
-
         [DisplayFormat(NullDisplayText = "No grade")]
         public Grade? Grade { get; set; }
 

@@ -21,10 +21,10 @@ namespace LassigUniversity.Controllers
 
         // GET: Students
         public async Task<IActionResult> Index(
-            string sortOrder,
-            string currentFilter,
-            string searchString,
-            int? pageNumber)
+    string sortOrder,
+    string currentFilter,
+    string searchString,
+    int? pageNumber)
         {
             ViewData["CurrentSort"] = sortOrder;
             ViewData["NameSortParm"] = String.IsNullOrEmpty(sortOrder) ? "name_desc" : "";
@@ -38,6 +38,7 @@ namespace LassigUniversity.Controllers
             {
                 searchString = currentFilter;
             }
+
             ViewData["CurrentFilter"] = searchString;
 
             var students = from s in _context.Students
@@ -62,6 +63,7 @@ namespace LassigUniversity.Controllers
                     students = students.OrderBy(s => s.LastName);
                     break;
             }
+
             int pageSize = 3;
             return View(await PaginatedList<Student>.CreateAsync(students.AsNoTracking(), pageNumber ?? 1, pageSize));
         }
@@ -75,11 +77,10 @@ namespace LassigUniversity.Controllers
             }
 
             var student = await _context.Students
-           .Include(s => s.Enrollments)
-               .ThenInclude(e => e.Course)
-           .AsNoTracking()
-           .FirstOrDefaultAsync(m => m.ID == id);
-
+                .Include(s => s.Enrollments)
+                    .ThenInclude(e => e.Course)
+                .AsNoTracking()
+                .FirstOrDefaultAsync(m => m.ID == id);
 
             if (student == null)
             {
@@ -100,7 +101,8 @@ namespace LassigUniversity.Controllers
         // For more details, see http://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public async Task<IActionResult> Create([Bind("EnrollmentDate,FirstMidName,LastName")] Student student)
+        public async Task<IActionResult> Create(
+            [Bind("EnrollmentDate,FirstMidName,LastName")] Student student)
         {
             try
             {
@@ -110,7 +112,8 @@ namespace LassigUniversity.Controllers
                     await _context.SaveChangesAsync();
                     return RedirectToAction(nameof(Index));
                 }
-            }catch (DbUpdateException /* ex */)
+            }
+            catch (DbUpdateException /* ex */)
             {
                 //Log the error (uncomment ex variable name and write a log.
                 ModelState.AddModelError("", "Unable to save changes. " +

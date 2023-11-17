@@ -27,12 +27,65 @@ namespace LassigUniversity.Migrations
                     b.Property<int>("Credits")
                         .HasColumnType("int");
 
+                    b.Property<int>("DepartmentID")
+                        .HasColumnType("int");
+
                     b.Property<string>("Title")
-                        .HasColumnType("nvarchar(max)");
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
 
                     b.HasKey("CourseID");
 
+                    b.HasIndex("DepartmentID");
+
                     b.ToTable("Course");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.CourseAssignment", b =>
+                {
+                    b.Property<int>("CourseID")
+                        .HasColumnType("int");
+
+                    b.Property<int>("InstructorID")
+                        .HasColumnType("int");
+
+                    b.HasKey("CourseID", "InstructorID");
+
+                    b.HasIndex("InstructorID");
+
+                    b.ToTable("CourseAssignment");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.Department", b =>
+                {
+                    b.Property<int>("DepartmentID")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<decimal>("Budget")
+                        .HasColumnType("money");
+
+                    b.Property<int?>("InstructorID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Name")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.Property<byte[]>("RowVersion")
+                        .IsConcurrencyToken()
+                        .ValueGeneratedOnAddOrUpdate()
+                        .HasColumnType("rowversion");
+
+                    b.Property<DateTime>("StartDate")
+                        .HasColumnType("datetime2");
+
+                    b.HasKey("DepartmentID");
+
+                    b.HasIndex("InstructorID");
+
+                    b.ToTable("Department");
                 });
 
             modelBuilder.Entity("LassigUniversity.Models.Enrollment", b =>
@@ -60,27 +113,110 @@ namespace LassigUniversity.Migrations
                     b.ToTable("Enrollment");
                 });
 
-            modelBuilder.Entity("LassigUniversity.Models.Student", b =>
+            modelBuilder.Entity("LassigUniversity.Models.OfficeAssignment", b =>
+                {
+                    b.Property<int>("InstructorID")
+                        .HasColumnType("int");
+
+                    b.Property<string>("Location")
+                        .HasMaxLength(50)
+                        .HasColumnType("nvarchar(50)");
+
+                    b.HasKey("InstructorID");
+
+                    b.ToTable("OfficeAssignment");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.Person", b =>
                 {
                     b.Property<int>("ID")
                         .ValueGeneratedOnAdd()
                         .HasColumnType("int")
                         .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
-                    b.Property<DateTime>("EnrollmentDate")
-                        .HasColumnType("datetime2");
+                    b.Property<string>("Discriminator")
+                        .IsRequired()
+                        .HasColumnType("nvarchar(max)");
 
                     b.Property<string>("FirstMidName")
+                        .IsRequired()
                         .HasMaxLength(50)
-                        .HasColumnType("nvarchar(50)");
+                        .HasColumnType("nvarchar(50)")
+                        .HasColumnName("FirstName");
 
                     b.Property<string>("LastName")
+                        .IsRequired()
                         .HasMaxLength(50)
                         .HasColumnType("nvarchar(50)");
 
                     b.HasKey("ID");
 
-                    b.ToTable("Student");
+                    b.ToTable("Person");
+
+                    b.HasDiscriminator<string>("Discriminator").HasValue("Person");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.Instructor", b =>
+                {
+                    b.HasBaseType("LassigUniversity.Models.Person");
+
+                    b.Property<DateTime>("HireDate")
+                        .HasColumnType("datetime2");
+
+                    b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("Instructor");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.Student", b =>
+                {
+                    b.HasBaseType("LassigUniversity.Models.Person");
+
+                    b.Property<DateTime>("EnrollmentDate")
+                        .HasColumnType("datetime2");
+
+                    b.ToTable("Person");
+
+                    b.HasDiscriminator().HasValue("Student");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.Course", b =>
+                {
+                    b.HasOne("LassigUniversity.Models.Department", "Department")
+                        .WithMany("Courses")
+                        .HasForeignKey("DepartmentID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Department");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.CourseAssignment", b =>
+                {
+                    b.HasOne("LassigUniversity.Models.Course", "Course")
+                        .WithMany("CourseAssignments")
+                        .HasForeignKey("CourseID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("LassigUniversity.Models.Instructor", "Instructor")
+                        .WithMany("CourseAssignments")
+                        .HasForeignKey("InstructorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Course");
+
+                    b.Navigation("Instructor");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.Department", b =>
+                {
+                    b.HasOne("LassigUniversity.Models.Instructor", "Administrator")
+                        .WithMany()
+                        .HasForeignKey("InstructorID");
+
+                    b.Navigation("Administrator");
                 });
 
             modelBuilder.Entity("LassigUniversity.Models.Enrollment", b =>
@@ -102,9 +238,34 @@ namespace LassigUniversity.Migrations
                     b.Navigation("Student");
                 });
 
+            modelBuilder.Entity("LassigUniversity.Models.OfficeAssignment", b =>
+                {
+                    b.HasOne("LassigUniversity.Models.Instructor", "Instructor")
+                        .WithOne("OfficeAssignment")
+                        .HasForeignKey("LassigUniversity.Models.OfficeAssignment", "InstructorID")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.Navigation("Instructor");
+                });
+
             modelBuilder.Entity("LassigUniversity.Models.Course", b =>
                 {
+                    b.Navigation("CourseAssignments");
+
                     b.Navigation("Enrollments");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.Department", b =>
+                {
+                    b.Navigation("Courses");
+                });
+
+            modelBuilder.Entity("LassigUniversity.Models.Instructor", b =>
+                {
+                    b.Navigation("CourseAssignments");
+
+                    b.Navigation("OfficeAssignment");
                 });
 
             modelBuilder.Entity("LassigUniversity.Models.Student", b =>

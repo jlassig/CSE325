@@ -3,7 +3,6 @@ C:\Users\Julia\Desktop\C#\CSE325\MegaDesk-JuliaLassig\MegaDesk-JuliaLassig\bin\D
 C:\Users\Julia\Desktop\C#\CSE325\MegaDesk-JuliaLassig\MegaDesk-JuliaLassig\bin\Debug\MegaDesk-JuliaLassig.exe
 C:\Users\Julia\Desktop\C#\CSE325\MegaDesk-JuliaLassig\MegaDesk-JuliaLassig\bin\Debug\MegaDesk-JuliaLassig.pdb
 C:\Users\Julia\Desktop\C#\CSE325\MegaDesk-JuliaLassig\MegaDesk-JuliaLassig\obj\Debug\MegaDesk-JuliaLassig.csproj.AssemblyReference.cache
-C:\Users\Julia\Desktop\C#\CSE325\MegaDesk-JuliaLassig\MegaDesk-JuliaLassig\obj\Debug\MegaDesk-JuliaLassig.csproj.SuggestedBindingRedirects.cache
 C:\Users\Julia\Desktop\C#\CSE325\MegaDesk-JuliaLassig\MegaDesk-JuliaLassig\obj\Debug\MegaDesk_JuliaLassig.AddQuote.resources
 C:\Users\Julia\Desktop\C#\CSE325\MegaDesk-JuliaLassig\MegaDesk-JuliaLassig\obj\Debug\MegaDesk_JuliaLassig.DisplayQuote.resources
 C:\Users\Julia\Desktop\C#\CSE325\MegaDesk-JuliaLassig\MegaDesk-JuliaLassig\obj\Debug\MegaDesk_JuliaLassig.MainMenu.resources
