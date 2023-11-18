@@ -59,8 +59,10 @@ html {
 }
 
 body {
-  /* Margin bottom by footer height */
-  margin-bottom: 60px;
+    /* Margin bottom by footer height */
+    margin-bottom: 60px;
+    /*background-color: #895957;*/
+    background-color: #ADBEC2;
 }
 .footer {
   position: absolute;
@@ -68,4 +70,49 @@ body {
   width: 100%;
   white-space: nowrap;
   line-height: 60px; /* Vertically center the text there */
+}
+
+*{
+    font-family: 'Crimson Text', serif;
+ }
+
+h1, h2, h3, h4, h5,h6, table th{
+    font-family: 'Roboto', sans-serif;
+}
+
+.centerme {
+    text-align: center;
+}
+
+.center-div >*{
+    margin: auto;
+    text-align: center;
+    margin-top: 20px;
+    
+    /*background-color: #ADBEC2;*/
+}
+
+a{
+    color: black;
+    padding: 10px;
+
+}
+
+a:hover {
+    background-color: #A06B6A;
+    color: black;
+    text-decoration: none;
+    border-radius: 10px;
+  
+}
+
+.div-margin{
+    margin-top: 60px;
+
+}
+
+
+.check-table td{
+    padding: 10px;
+    border: 1px solid black;
 }

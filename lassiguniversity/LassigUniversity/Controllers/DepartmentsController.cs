@@ -34,10 +34,12 @@ namespace LassigUniversity.Controllers
                 return NotFound();
             }
 
+            string query = "SELECT * FROM Department WHERE DepartmentID = {0}";
             var department = await _context.Departments
+                .FromSqlRaw(query, id)
                 .Include(d => d.Administrator)
-                 .AsNoTracking()
-                .FirstOrDefaultAsync(m => m.DepartmentID == id);
+                .AsNoTracking()
+                .FirstOrDefaultAsync();
             if (department == null)
             {
                 return NotFound();
